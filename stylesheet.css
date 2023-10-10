@@ -1,5 +1,36 @@
 /* latin-ext */
 @font-face {
+  font-family: 'CMUSerif-Roman';
+  font-style: normal;
+  font-weight: 400;
+  src: local('CMUSerif-Roman'), url("fonts/cmunrm.ttf") format('truetype');
+}
+
+/* CMU Serif Roman Bold */
+@font-face {
+  font-family: 'CMUSerif-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('CMUSerif-Bold'), url("fonts/cmunbx.ttf") format('truetype');
+}
+
+/* CMU Sans Serif */
+@font-face {
+  font-family: 'CMUSans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('CMUSans'), url("fonts/cmunss.ttf") format('truetype');
+}
+
+/* CMU Sans Serif Bold */
+@font-face {
+  font-family: 'CMUSans-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('CMUSans-Bold'), url("fonts/cmunsx.ttf") format('truetype');
+}
+
+@font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
@@ -80,24 +111,24 @@ th,
 tr,
 p,
 a {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'CMUSerif-Roman', Verdana, Helvetica, sans-serif;
   font-size: 14px;
 }
 
 strong {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'CMUSerif-Bold', Verdana, Helvetica, sans-serif;
   font-size: 14px;
 }
 
 h2 {
   margin: 0;
   font-weight: normal;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'CMUSans-Bold', Verdana, Helvetica, sans-serif;
   font-size: 22px;
 }
 
 .papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'CMUSerif-Roman', Verdana, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 700;
 }
@@ -105,7 +136,7 @@ h2 {
 .name {
   padding-top: 20px;
   margin: 0;
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-family: 'CMUSans-Bold', Verdana, Helvetica, sans-serif;
   font-size: 32px;
 }
 
