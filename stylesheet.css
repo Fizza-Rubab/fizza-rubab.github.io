@@ -31,6 +31,20 @@
 }
 
 @font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Avenir'), url("https://db.onlinewebfonts.com/t/116af611cbcd9e4bada60b4e700430c1.woff2") format('truetype');
+}
+
+@font-face {
+  font-family: 'Coquette';
+  font-style: normal;
+  font-weight: 1000;
+  src: local('Coquette'), url("https://db.onlinewebfonts.com/t/1b0c7b704d6b55a79e7882dd555839b0.woff2") format('woff');
+}
+
+@font-face {
   font-family: 'Lato';
   font-style: italic;
   font-weight: 400;
