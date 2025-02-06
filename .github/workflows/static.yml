@@ -22,7 +22,7 @@ jobs:
       - name: Upload static files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'  # Change if your site is inside a folder like 'dist' or 'public'
+          path: './'  # Uploads everything in the repository, including subfolders
 
       - name: Deploy to GitHub Pages
         id: deployment
