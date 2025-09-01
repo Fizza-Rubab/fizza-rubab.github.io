@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Interactive Stroke-based Neural SDF Sculpting</title>
+
+    <meta name="author" content="Fizza Rubab">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+
+    <!-- For 3D model viewing -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <table style="width:100%;max-width:900px;margin:auto;border:0px;border-spacing:0px;">
+        <tbody>
+            <tr>
+                <td style="text-align:center;padding:10px;">
+                    <h1>Interactive Stroke-based Neural SDF Sculpting</h1>
+
+                    <a href="https://highperformancegraphics.org/2025/">
+                        <h2>High Performance Graphics, 2025</h2>
+                    </a>
+
+                    <h>
+                        <a href="https://fizza-rubab.github.io/">Fizza Rubab</a>,
+                        <a href="https://www.cse.msu.edu/~ytong/">Yiying Tong</a> <br>
+                    </h>
+                    <h>
+                        Michigan State University
+                    </h>
+
+                    <div class="link-buttons">
+                        <a href="https://diglib.eg.org/bitstream/handle/10.2312/hpg20251169/hpg20251169.pdf"
+                            target="_blank">Paper</a>
+                        <a href="#" target="_blank">Code</a>
+                        <a href="#" target="_blank">Slides</a>
+                    </div>
+
+
+                    <!-- Fixed banner -->
+                    <img src="data/sculpting/hpg-overview.png" alt="Method Overview" class="banner">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Abstract -->
+    <table style="width:100%;max-width:900px;margin:auto;">
+        <tbody>
+            <tr>
+                <td style="padding:20px;">
+                    <h2 style="text-align: center;">Abstract</h2>
+                    <p>
+                        Recent advances in implicit neural representations have made them a popular choice for modeling
+                        3D geometry. However,
+                        directly editing these representations presents challenges due to the complex relationship
+                        between model weights and surface
+                        geometry, as well as the slow optimization required to update neural fields. Among various
+                        editing tools, sculpting stands out as
+                        a valuable operation for the graphics and modeling community. While traditional mesh-based tools
+                        like ZBrush enable intuitive
+                        edits, a comparable high-performance toolkit for sculpting neural SDFs is currently lacking. We
+                        introduce a framework that
+                        enables interactive surface sculpting directly on neural implicit representations with optimized
+                        performance. Unlike previous
+                        methods, which are limited to spot edits, our approach allows users to perform stroke-based
+                        modifications on the fly, ensuring
+                        intuitive shape manipulation without switching representations. By employing tubular
+                        neighborhoods to sample strokes and
+                        customizable brush profiles, we achieve smooth deformations along user-defined curves, providing
+                        intuitive control over the
+                        sculpting process. Our method demonstrates that versatile edits can be achieved while preserving
+                        the smooth nature of implicit
+                        representations, all without compromising interactive performance.
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 style="text-align:center;">Results</h2>
+
+    <!-- Two static images with captions -->
+    <div class="image-results"
+        style="display:flex; justify-content:center; gap:20px; max-width:900px; margin:20px auto; flex-wrap:wrap;">
+
+        <figure style="flex:1 1 45%; text-align:center;">
+            <img src="data/sculpting/profiled_edits.png" alt="Result 1" style="width:100%; border-radius:6px;">
+            <figcaption style="margin-top:6px; font-size:0.9em; color:#444;">
+                Examples of edits using different brush profiles and modulation functions. Above each shape, the left
+                plot shows the brush
+                profile, and the right plot shows the modulation
+            </figcaption>
+        </figure>
+
+        <figure style="flex:1 1 45%; text-align:center;">
+            <img src="data/sculpting/edit_sequence.png" alt="Result 2" style="width:100%; border-radius:6px;">
+            <figcaption style="margin-top:6px; font-size:0.9em; color:#444;">
+                Editing sequence on a flying-unicorn model. For each step, the plot above the arrow shows the modulation
+                curve, while the plot
+                below shows the brush profile. The user successively sculpts tufts on the mane, stylizes the tail, and
+                adds decorative ridges to the wings.
+
+            </figcaption>
+        </figure>
+
+    </div>
+    <!-- Results with 3D gallery -->
+    <h2 style="text-align:center;">3D Edits Gallery</h2>
+    <div class="model-gallery">
+
+        <figure>
+            <model-viewer src="data/sculpting/edited_frog.glb" alt="Edited Shape 1" orientation="0 0 1.528"
+                camera-controls environment-image="neutral" shadow-intensity="0.5" exposure="0.2">
+            </model-viewer>
+            <figcaption>Frog–Lizard Hybrid</figcaption>
+        </figure>
+
+        <figure>
+            <model-viewer src="data/sculpting/cheekbones.glb" alt="Edited Shape 2" auto-rotate camera-controls
+                environment-image="neutral" shadow-intensity="0.5" exposure="0.2">
+            </model-viewer>
+            <figcaption>Bust with Sculpted Cheekbones</figcaption>
+        </figure>
+
+        <figure>
+            <model-viewer src="data/sculpting/pumpkin_edited.glb" alt="Edited Shape 3" orientation="0.25 0 -1.528"
+                camera-controls environment-image="neutral" shadow-intensity="0.5" exposure="0.2">
+            </model-viewer>
+            <figcaption>Carved Pumpkin for Halloween</figcaption>
+        </figure>
+
+    </div>
+
+
+</body>
+
+</html>
