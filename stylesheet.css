@@ -192,6 +192,37 @@ span.highlight {
   background-color: #ffffd0;
 }
 
+.news-scroll {
+  max-height: 150px;
+  margin-top: 10px;
+  padding: 0 14px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.news-scroll ul {
+  margin: 10px 0;
+  padding-left: 22px;
+}
+
+.news-scroll li {
+  margin-bottom: 2px;
+  line-height: 1.35;
+}
+
+.news-scroll li:last-child {
+  margin-bottom: 0;
+}
+
+.news-scroll:focus {
+  outline: 2px solid #1772d0;
+  outline-offset: 2px;
+}
+
 .model-gallery {
   display: flex;
   justify-content: space-between; /* spread evenly */
