@@ -90,6 +90,8 @@
                   <h2>News</h2>
                   <div class="news-scroll" role="region" aria-label="News updates" tabindex="0">
                     <ul>
+                      <li>[Aug. 2026] Our paper "Unmasking Face Embeddings: Reading, Rendering and Naming with Foundation Models" is accepted in <a
+                          href="https://foundgen-bio.github.io/eccv2026/">ECCVW 2026.</a></li>
                       <li>[Jul. 2026] Our paper "Compatibility of Face Embeddings Across Deep Neural Networks" is accepted in <a
                           href="https://ijcb2026.ieee-biometrics.org/">IJCB 2026.</a></li>
                       <li>[May. 2026] I was accepted into NSF Research Traineeship 2026-2027 cohort.</li>
@@ -137,6 +139,43 @@
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
                     <div class="two" id='db3d_image'><video width=100% height=200% muted autoplay loop>
+                        <source src="images/unmask-faces.png" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video></div>
+                    <img src='images/unmask-faces.png' width="180">
+                  </div>
+                  <script type="text/javascript">
+                    function db3d_start() {
+                      document.getElementById('db3d_image').style.opacity = "1";
+                    }
+
+                    function db3d_stop() {
+                      document.getElementById('db3d_image').style.opacity = "0";
+                    }
+                    db3d_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="#">
+                    <span class="papertitle">Unmasking Face Embeddings: Reading, Rendering and Naming with Foundation Models</span>
+                  </a>
+                  <br>
+
+                  <strong>Fizza Rubab</strong>, Yiying Tong and Arun Ross
+                  <br>
+                  <em>ECCV Workshop on Foundation and Generative Models in Biometrics, 2026</em>
+                  <br>
+                  <!-- <a href="https://github.com/Fizza-Rubab/Poet-Ghazal-Dataset">project page</a>  -->
+                  <a href="#">publication</a>
+                  <p></p>
+                  <p> We unmask face embeddings by linearly aligning them with foundation models: once aligned, an embedding can be read with text queries, rendered into a face, and matched to a person's name.</p>
+                </td>
+              </tr>
+
+              <tr onmouseout="db3d_stop()" onmouseover="db3d_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='db3d_image'><video width=100% height=200% muted autoplay loop>
                         <source src="images/face-embeddings.png" type="video/mp4">
                         Your browser does not support the video tag.
                       </video></div>
@@ -163,7 +202,7 @@
                   <br>
                   <em>International Joint Conference on Biometrics (IJCB), 2026</em>
                   <br>
-                  <!-- <a href="https://github.com/Fizza-Rubab/Poet-Ghazal-Dataset">project page</a>  -->
+                  <a href="https://github.com/Fizza-Rubab/face-embedding-compatibility">code</a> /
                   <a href="https://arxiv.org/abs/2604.07282">publication</a>
                   <p></p>
                   <p> We show that different face-recognition models encode facial identity in surprisingly similar ways, differing by little more than a linear mapping.</p>
