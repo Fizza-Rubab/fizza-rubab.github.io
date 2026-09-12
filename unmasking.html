@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Unmasking Face Embeddings</title>
+<meta name="author" content="Fizza Rubab">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#129542;</text></svg>">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<style>
+a{color:#1772d0;text-decoration:none;}
+a:hover,a:focus{color:#f09228;}
+body{margin:0;background:#fff;}
+body,td,th,tr,p,a,li{font-family:'CMUSerif-Roman',Verdana,Helvetica,sans-serif;font-size:15px;}
+strong{font-family:'CMUSerif-Bold',Verdana,Helvetica,sans-serif;}
+h1{font-weight:normal;font-family:'CMUSans-Bold',Verdana,Helvetica,sans-serif;font-size:38px;line-height:1.15;margin:0 0 6px;}
+h2{margin:0;font-weight:normal;font-family:'CMUSans-Bold',Verdana,Helvetica,sans-serif;font-size:22px;}
+.venue h2{font-size:22px;margin:6px 0 4px;}
+.authors{font-size:18px;margin:16px 0 2px;}
+.affil{font-size:16px;color:#333;margin-bottom:6px;}
+.link-buttons{display:flex;justify-content:center;gap:15px;margin-top:16px;flex-wrap:wrap;}
+.link-buttons a{padding:8px 18px;border-radius:6px;color:#fff;background:#444;font-family:'CMUSans',Verdana,Helvetica,sans-serif;}
+.link-buttons a:hover{background:#666;color:#fff;}
+p{line-height:1.6;text-align:justify;}
+figure{margin:0;}
+figcaption{margin-top:8px;font-size:0.9em;color:#444;line-height:1.5;text-align:center;}
+.sectiontitle{text-align:center;margin:34px 0 6px;}
+.stats{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;max-width:900px;margin:18px auto 6px;}
+.stat{text-align:center;min-width:150px;}
+.stat .n{font-family:'CMUSans-Bold',Verdana,Helvetica,sans-serif;font-size:30px;color:#1772d0;line-height:1;}
+.stat .l{font-size:0.9em;color:#444;margin-top:6px;}
+.banner{width:100%;max-width:900px;margin:18px auto 4px;border-radius:10px;display:block;}
+pre{background:#f6f7f6;border:1px solid #e6e6e6;border-radius:8px;padding:16px 18px;overflow-x:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;line-height:1.5;text-align:left;}
+.cc{text-align:center;color:#555;font-size:0.9em;padding:26px 0 40px;}
+</style>
+</head><body>
+<table style="width:100%;max-width:900px;margin:auto;border:0;border-spacing:0;"><tbody><tr>
+<td style="text-align:center;padding:30px 16px 6px;">
+ <h1>Unmasking Face Embeddings:<br>Reading, Rendering and Naming with Foundation Models</h1>
+ <div class="venue"><a href="https://eccv.ecva.net/" target="_blank"><h2>European Conference on Computer Vision (ECCV) Workshops, 2026</h2></a></div>
+ <div class="authors"><a href="https://fizza-rubab.github.io/">Fizza Rubab</a>,
+  <a href="https://www.cse.msu.edu/~ytong/">Yiying Tong</a>,
+  <a href="https://www.cse.msu.edu/~rossarun/">Arun Ross</a></div>
+ <div class="affil">Michigan State University</div>
+ <div class="link-buttons">
+  <a href="https://arxiv.org/pdf/2609.00411" target="_blank">Paper</a>
+  <a href="https://arxiv.org/abs/2609.00411" target="_blank">arXiv</a>
+  <a href="https://github.com/Fizza-Rubab/unmasking-face-embeddings" target="_blank">Code</a></div>
+ <img src="data/unmasking/overview.png" alt="Overview: read, render, name" class="banner">
+ <figcaption style="max-width:860px;margin:8px auto 0;">One precomputed linear map turns an FR identity embedding
+ (e.g., ArcFace) into a foundation-model embedding (e.g., CLIP), fit once with no further training. The same template
+ can then be <strong>read</strong> in natural language, <strong>rendered</strong> into a face, and matched to a
+ <strong>name</strong>.</figcaption>
+</td></tr></tbody></table>
+
+<table style="width:100%;max-width:900px;margin:auto;"><tbody><tr><td style="padding:14px 20px;">
+ <h2 class="sectiontitle">Abstract</h2><p>Modern face recognition (FR) owes much of its success to deep neural networks that learn compact identity embeddings from face images. These embeddings are highly effective for biometric matching but largely opaque to semantic interpretation. In contrast, foundation models, pretrained on broad visual or vision-language tasks, provide rich interfaces for describing, retrieving, generating, and organizing visual content. This raises a question: what capabilities become available when face embeddings from domain-specific FR models are made interoperable with foundation models? Building on recent work on embedding compatibility, we use simple pre-computed <strong>linear</strong> transformations, estimated from paired embeddings alone, to connect existing FR models with off-the-shelf foundation models. Once aligned, a face embedding can be &ldquo;unmasked&rdquo; in multiple ways, without training or modifying either model: it can be <em>read</em> in natural language, enabling free-form text queries over a gallery of FR embeddings; <em>rendered</em> into a face image that recovers a person's appearance, using an unmodified diffusion decoder; and converted to a <em>name</em>, enabling identification even without an enrolled face gallery. In effect, one linear transformation turns an identity embedding into a rich embedding for web-scale foundation models, exposing face embeddings as semantically and visually rich representations, with implications for interpretability, retrieval, reconstruction, and template security.</p>
+</td></tr></tbody></table>
+
+<h2 class="sectiontitle">Read: free-form text queries</h2>
+<img src="data/unmasking/read.png" alt="Free-form text retrieval over FR embeddings" class="banner" style="max-width:820px;">
+<figcaption style="max-width:820px;margin:8px auto 0;">Natural-language searches over a gallery of FR embeddings.
+After alignment, queries such as &ldquo;a smiling young woman with blond hair&rdquo; rank the gallery almost as well
+as querying the foundation model natively.</figcaption>
+
+<h2 class="sectiontitle">Render: a face from the embedding alone</h2>
+<img src="data/unmasking/render.jpg" alt="Faces reconstructed from FR embeddings" class="banner">
+<figcaption style="max-width:860px;margin:8px auto 0;">A recognizable face decoded from the FR embedding alone, through
+an unmodified diffusion decoder. The reconstructions recover a person's appearance and retain identity.</figcaption>
+
+<h2 class="sectiontitle">Name: identity without a gallery</h2>
+<img src="data/unmasking/naming.png" alt="Naming FR embeddings against a text vocabulary" class="banner" style="max-width:860px;">
+<figcaption style="max-width:860px;margin:8px auto 0;">The template is matched against a text vocabulary of names, with no
+enrolled face gallery. Aligned FR templates name held-out people far above chance, while unaligned and random maps sit
+at chance.</figcaption>
+
+<table style="width:100%;max-width:900px;margin:auto;"><tbody><tr><td style="padding:20px;">
+ <h2 class="sectiontitle" style="margin-bottom:12px;">BibTeX</h2>
+<pre>@inproceedings{rubab2026unmasking,
+  title     = {Unmasking Face Embeddings: Reading, Rendering and Naming with Foundation Models},
+  author    = {Rubab, Fizza and Tong, Yiying and Ross, Arun},
+  booktitle = {European Conference on Computer Vision Workshops (ECCVW)},
+  year      = {2026}
+}</pre>
+</td></tr></tbody></table>
+
+<table style="width:100%;margin:auto;"><tbody><tr><td><p class="cc">This website is licensed under a
+<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p></td></tr></tbody></table>
+</body></html>

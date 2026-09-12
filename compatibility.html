@@ -57,12 +57,6 @@ pre{background:#f6f7f6;border:1px solid #e6e6e6;border-radius:8px;padding:16px 1
 </td></tr></tbody></table>
 
 <h2 class="sectiontitle">Cross-Model Recognition Is Recovered</h2>
-<div class="stats">
- <div class="stat"><div class="n">2&rarr;97%</div><div class="l">cross-model Rank-1 (face-specific)</div></div>
- <div class="stat"><div class="n">71%</div><div class="l">Rank-1 (foundation models)</div></div>
- <div class="stat"><div class="n">0.50&rarr;0.97</div><div class="l">verification AUC (face-specific)</div></div>
- <div class="stat"><div class="n">95%</div><div class="l">Rank-1 transfers across datasets</div></div>
-</div>
 <img src="data/compatibility/gallery.jpg" alt="Cross-model identification before and after alignment" class="banner">
 <figcaption style="max-width:820px;margin:8px auto 0;">Before alignment, a query embedded by one model retrieves the wrong
 neighbors in a second model's space (center); a single linear map recovers the correct identities (right). Here
